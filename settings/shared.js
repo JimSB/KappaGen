@@ -19,6 +19,7 @@ defaults = {
 		"blur": "0,0,100,100",
 		"zoom": "0,0,100,100",
 		"bounce": "10,10,90,20"
+        "attack": "10,10,90,20"
 	},
 	direction: "0,-1",
 	limit: 0,
