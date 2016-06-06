@@ -56,8 +56,16 @@ initializers = {
 		ap.canbounce = true;
 		return ap;
 	},
+	"attack": function (ctx, settings) {
+	    var ap = basicAnimationParams(ctx, settings, "attack");
+	    ap.vy = Math.random() * settings.size - 2 * ap.y;
+	    ap.amp = settings.size * Math.floor((Math.random() * 150) + 50);;
+	    ap.goleft = Math.random() > 0.5;
+	    ap.canbounce = false;
+	    return ap;
+	},
 	"random": function(ctx, settings) {
-		var animations = ["bubble","blur","zoom","bounce"];
+		var animations = ["bubble","blur","zoom","bounce","attack"];
 		return initializers[animations[Math.floor(Math.random()*animations.length)]](ctx, settings);
 	}
 }
